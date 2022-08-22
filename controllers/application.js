@@ -51,7 +51,7 @@ class ApplicationController {
       Goal: ${goal}
     `
 
-    await MailService.sendMail(html, 'kravetzoleg123@gmail.com')
+    await MailService.sendMail(html, '0xdmtr@gmail.com')
 
 
     return response
