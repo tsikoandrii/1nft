@@ -16,12 +16,12 @@ app.post(
   '/append',
   body('name').not().isEmpty(),
   body('email').isEmail(),
-  body('discord').not().isEmpty(),
-  body('nft').not().isEmpty(),
-  body('goal').not().isEmpty(),
+  body('stage').not().isEmpty(),
+  body('people').not().isEmpty(),
+  body('marketingBudget').not().isEmpty(),
   async (req, res) => {
   try {
-    const { name, email, discord, nft, goal } = req.body
+    const { name, email, discord, stage, people, type, marketingBudget, website, twitter, idea } = req.body
 
     // Validation Body
     const errors = validationResult(req)
@@ -32,7 +32,7 @@ app.post(
     // Getting the latest index for numbering
     const lastIndex = await ApplicationController.getCeilValue('H2')
 
-    const response = await ApplicationController.append(lastIndex, name, email, discord, nft, goal)
+    const response = await ApplicationController.append(lastIndex, name, email, discord, stage, people, type, marketingBudget, website, twitter, idea)
 
     res.status(response.status).json({
       message: response.status === 200 ? 'Application has been append!' : 'Somethings went wrong!'

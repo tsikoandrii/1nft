@@ -26,7 +26,7 @@ class ApplicationController {
       }
     })
   }
-  async append(lastIndex, name, email, discord, nft, goal) {
+  async append(lastIndex, name, email, discord, stage, people, type, marketingBudget, website, twitter, idea, nft) {
     const { sheets } = await authentication()
     lastIndex = Number(lastIndex)
     const response = await sheets.spreadsheets.values.append({
@@ -35,7 +35,7 @@ class ApplicationController {
       valueInputOption: 'USER_ENTERED',
       resource: {
         values: [
-          [lastIndex, name, email, discord, nft, goal]
+          [lastIndex, name, email, discord, stage, people, type, marketingBudget, website, twitter, idea, nft]
         ]
       }
     })
@@ -44,17 +44,22 @@ class ApplicationController {
     }
 
     const html = `
-      Question: ${name} <br/>
+      Project Name: ${name} <br/>
+      Stage: ${stage} <br/>
+      Number of employees: ${people} <br/>
+      Type of Collection: ${type || 'None'} <br/>
+      Marketing Budget: ${marketingBudget} <br/>
+      Website: ${website || 'None'} <br/>
+      Twitter: ${twitter || 'None'} <br/>
+      Discord: ${discord || 'None'} <br/>
       Email: ${email} <br/>
-      Discord: ${discord} <br/>
-      Test: ${nft} <br/>
-      Goal: ${goal}
+      Is this your <br> first project with the NFT? : ${nft} <br/>
+      Idea: <p>${idea || 'None'}</p>
     `
 
     await MailService.sendMail(html, '0xdmtr@gmail.com')
 
-
-    return response
+    return response;
   }
 }
 

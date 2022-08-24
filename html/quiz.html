@@ -8,12 +8,12 @@
 	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
-    <link rel="manifest" href="images/fav/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+	<link rel="manifest" href="images/fav/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="css/app.min.css">
@@ -25,18 +25,169 @@
 	<div class="container">
 		<div class="quiz-block">
 			<a href="/" class="quiz-block-logotype">
-				<img src="images/logotype.png" alt="logotype">
+				<img src="images/logotype.svg" alt="logotype">
 			</a>
 			<form class="quiz" id="quiz">
 
 				<div class="quiz-item" data-question>
 					<strong class="quiz-title">
 						What is <br>
-						your project called
+						the name of your project?
 					</strong>
 					<label class="default-label">
 						Let's get to know each other!
-						<input type="text" class="default-input" name="name" placeholder="Type your answer here...">
+						<input data-message="Incorrect name!" data-required type="text" class="default-input" name="name" placeholder="Type your answer here..." max="200">
+					</label>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						What stage is <br>
+						your project at?
+					</strong>
+					<div class="answers">
+						<select data-message="Define the stage of the project" data-required class="default-select" name="stage">
+							<option disabled selected value>Select your answer here...</option>
+							<option value="At the stage of an idea, a concept;">At the stage of an idea, a concept;</option>
+							<option value="The project was partially realized;">The project was partially realized;</option>
+							<option value="The project is fully implemented, requires marketing and consulting.">The project is fully implemented, requires marketing and consulting.</option>
+						</select>
+					</div>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						How many <span class="accent-color">people</span><br>
+						are on your team? <span class="accent-color">*</span>
+					</strong>
+					<label class="default-label">
+						<br>
+						<input data-message="Specify the number of employees" data-required type="text" class="default-input" name="people" placeholder="Type your answer here...">
+					</label>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						What is the focus (type) <br>
+						of your collection?
+					</strong>
+					<div class="answers answers--group">
+						<label class="checkbox-mini">
+							<input data-required value="PFP" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									PFP
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Collectibles" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									Collectibles
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Generative Art" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									Generative Art
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Photography" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									Photography
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="P2E" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									P2E
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Metaverse" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									Metaverse
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Music" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									Music
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Wearables (Fashion)" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+									Wearables (Fashion)
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="Other" type="checkbox" name="type">
+							<span class="checkbox-mini-answer">
+								Other
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						What is <br>
+						your marketing budget
+					</strong>
+					<div class="answers answers--group">
+						<label class="checkbox-mini">
+							<input checked data-required value="undefined" type="radio" name="marketingBudget">
+							<span class="checkbox-mini-answer">
+									I don't know yet
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="1000" type="radio" name="marketingBudget">
+							<span class="checkbox-mini-answer">
+									$1000
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="< $5000" type="radio" name="marketingBudget">
+							<span class="checkbox-mini-answer">
+									< $5000
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="< $20000" type="radio" name="marketingBudget">
+							<span class="checkbox-mini-answer">
+									< $20000
+								</span>
+						</label>
+						<label class="checkbox-mini">
+							<input data-required value="< $50000" type="radio" name="marketingBudget">
+							<span class="checkbox-mini-answer">
+									< $50000
+								</span>
+						</label>
+					</div>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						Your website?
+					</strong>
+					<label class="default-label">
+						Skip this step if there is no site at this stage!
+						<input type="text" class="default-input" name="website" placeholder="Type your answer here..." max="200">
+					</label>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						Your twitter?
+					</strong>
+					<label class="default-label">
+						Skip this step if there is no twitter at this stage!
+						<input type="text" class="default-input" name="twitter" placeholder="Type your answer here..." max="200">
+					</label>
+				</div>
+				<div class="quiz-item hide" data-question>
+					<strong class="quiz-title">
+						Your Discord
+					</strong>
+					<label class="default-label">
+						Skip this step if there is no twitter at this stage!
+						<input type="text" class="default-input" name="discord" placeholder="Type your answer here..." max="200">
 					</label>
 				</div>
 				<div class="quiz-item hide" data-question>
@@ -45,34 +196,22 @@
 						Email <span class="accent-color">*</span>
 					</strong>
 					<label class="default-label">
-						<br>
-						<input data-validate="email" data-message="That email doesn't look right!" type="text" class="default-input" name="email" placeholder="Type your answer here...">
+						<input data-required data-validate="email" data-message="That email doesn't look right!" type="text" class="default-input" name="email" placeholder="Type your answer here...">
 					</label>
 				</div>
 				<div class="quiz-item hide" data-question>
 					<strong class="quiz-title">
-						<span class="accent-color">Your</span><br>
-						discord nickname <span class="accent-color">*</span>
-					</strong>
-					<label class="default-label">
-						User#1234
-						<input type="text" class="default-input" name="discord" placeholder="Type your answer here...">
-					</label>
-				</div>
-				<div class="quiz-item hide" data-question>
-					<strong class="quiz-title">
-						<span class="accent-color">Have You</span><br>
-						bought an NFT before? <span class="accent-color">*</span>
+						Is this your <br> first project with the NFT?
 					</strong>
 					<div class="answers">
 						<label class="checkbox">
-							<input value="yes" type="radio" name="nft_exp">
+							<input data-required value="yes" type="radio" name="nft">
 							<span class="checkbox-answer">
 									Yes
 								</span>
 						</label>
 						<label class="checkbox">
-							<input value="no" type="radio" name="nft_exp">
+							<input checked data-required value="no" type="radio" name="nft">
 							<span class="checkbox-answer">
 									No
 								</span>
@@ -81,16 +220,11 @@
 				</div>
 				<div class="quiz-item hide" data-question>
 					<strong class="quiz-title">
-						Your goal
+						Describe the idea (concept) <br> of your project?
 					</strong>
-					<div class="answers">
-						<select class="default-select" name="nft_goal">
-							<option disabled selected>Select your answer here...</option>
-							<option value="production">Production</option>
-							<option value="development">Development</option>
-							<option value="study">Study</option>
-						</select>
-					</div>
+					<label class="default-label">
+						<textarea max="1000" name="idea" class="default-textarea" placeholder="If you need expertise on your idea or your project and want to arrange a call with us, briefly write the purpose of the call and your questions. Once we have processed your request and we understand that we are competent in your question/request and we are willing to share our expertise with you (specify the cost per hour immediately?) we will notify you by letter."></textarea>
+					</label>
 				</div>
 
 				<div class="quiz-bar">
