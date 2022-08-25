@@ -58,6 +58,8 @@ class ApplicationController {
     `
 
     await MailService.sendMail(html, '0xdmtr@gmail.com')
+    await MailService.sendMail(html, 'aleksey.chusov@gmail.com')
+    await MailService.sendMail(html, 'kravetzoleg123@gmail.com')
 
     return response;
   }
